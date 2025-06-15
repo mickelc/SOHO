@@ -1,79 +1,54 @@
-# SOHO Network Simulation – VLAN & Inter-VLAN Routing
-This project is a hands-on Cisco Packet Tracer lab designed to simulate a small office/home office (SOHO) network. It demonstrates VLAN segmentation, Inter-VLAN routing using Router-on-a-Stick, and DHCP configuration to enable communication and automation across different departments.
+SOHO Network Simulation – VLAN & Inter-VLAN Routing
+This project is a Cisco Packet Tracer lab that simulates a small office/home office (SOHO) network. It focuses on VLAN segmentation, Inter-VLAN routing (Router-on-a-Stick), DHCP configuration, and wireless access setup across multiple departments.
 
-# Network Topology
-![image](https://github.com/user-attachments/assets/d59bb3de-f747-4cb8-a834-13f9316a3543)
-The network consists of three departments:
-IT (VLAN 10)
-Finance (VLAN 20)
-Human Resources (VLAN 30)
-Each department has a combination of PCs, wireless devices, and printers.
-
-# Switch Configuration
-![image](https://github.com/user-attachments/assets/a081cf16-0dfc-4bf7-b40c-ff24fee1b8aa)
-Assigned VLANs to Specific Ports:
-Fa0/2 to Fa0/4 → VLAN 10 (IT)
-Fa0/5 to Fa0/7 → VLAN 20 (Finance)
-Fa0/8 to Fa0/10 → VLAN 30 (HR)
-
-Configured Access Mode on Ports:
-Used switchport mode access to ensure only end devices (not switches) are connected.
-
-# Router Configuration
-![image](https://github.com/user-attachments/assets/e1b2fa65-d368-4567-9420-d677137d8616)
-Enabled Inter-VLAN Routing on Router0 for:
-VLAN 10 (192.168.1.0/26)
-VLAN 20 (192.168.1.64/26)
-VLAN 30 (192.168.1.128/26)
-
-Configured Sub-Interfaces:
-G0/0.10 → 192.168.1.1 (VLAN 10)
-G0/0.20 → 192.168.1.65 (VLAN 20)
-G0/0.30 → 192.168.1.129 (VLAN 30)
-
-Encapsulation:
-Used encapsulation dot1Q for VLAN tagging.
-
-Saved and Verified Configuration:
-do wr to save
-do show start to confirm startup config
-
-# DHCP Configuration (on Router)
-![image](https://github.com/user-attachments/assets/158545d7-1c46-42f5-a854-afa36619070c)
-Three separate DHCP pools were created:
-IT-Pool: 192.168.1.0/26 → Gateway: 192.168.1.1
-Finance-Pool: 192.168.1.64/26 → Gateway: 192.168.1.65
-HR-Pool: 192.168.1.128/26 → Gateway: 192.168.1.129
-
-Each pool provided:
-Default gateway
-DNS server (same as gateway)
-Custom domain name (e.g., IT.com)
-
-All end devices successfully received IPs via DHCP.
-
-# Wireless Access Configuration
-![image](https://github.com/user-attachments/assets/90606b59-9d05-41d6-b837-c66ad35935f8)
-![image](https://github.com/user-attachments/assets/737953de-ae35-424a-83d9-02fa87ce1c38)
-![image](https://github.com/user-attachments/assets/ae803814-8185-4cb1-98d9-5cbc98cd64ae)
-
-# Connectivity Tests
-Ping from IT department PC to PC in the Human Resource Department
-![image](https://github.com/user-attachments/assets/35f7afcd-f494-4313-9e18-cddfe3e82b59)
-
-Ping from smartphone in the Finance Department to PC in the Human Resource Department
-![image](https://github.com/user-attachments/assets/31540a9e-bc52-4e33-9055-b7688cafa8d6)
-
-Ping from laptop in the Human Resource Department to printer in Finance Department
-![image](https://github.com/user-attachments/assets/ac0b0e4f-89f7-4bf6-a8c5-f50659ee891c)
-
-# Takeaways
-Through this project, I strengthened my understanding of:
-VLAN segmentation and network isolation
-Sub-interface routing using a single router port (Router-on-a-Stick)
-DHCP automation across multiple VLANs
-Wireless integration into VLAN-based networks
-Troubleshooting and verifying Layer 2 & 3 connectivity
+Network Topology
 
 
+Departments and VLANs
+Department	VLAN	IP Range
+IT	10	192.168.1.0/26
+Finance	20	192.168.1.64/26
+Human Resources	30	192.168.1.128/26
 
+Key Configurations
+Switch Setup
+Assigned access ports to VLANs
+
+Used switchport mode access to prevent trunking on user ports
+
+Router-on-a-Stick
+Configured sub-interfaces on Router0 using dot1Q encapsulation
+
+Assigned gateways for each VLAN
+
+Enabled Inter-VLAN routing
+
+DHCP
+Created 3 DHCP pools (IT, Finance, HR) with appropriate IP ranges
+
+Assigned default gateway, DNS, and domain for each
+
+Wireless
+Configured Access Points with SSIDs and passwords
+
+Smartphones connected wirelessly and received IPs via DHCP
+
+Connectivity Tests
+Ping from IT PC to HR PC
+
+Ping from Finance smartphone to HR PC
+
+Ping from HR laptop to Finance printer
+
+Screenshots of these successful pings are included in the Full Documentation.
+
+Skills Practiced
+VLAN creation and port assignment
+
+Sub-interface routing (Router-on-a-Stick)
+
+DHCP setup across VLANs
+
+Wireless configuration
+
+Network troubleshooting and testing
