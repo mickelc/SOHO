@@ -100,13 +100,13 @@ Access Points were configured with custom SSIDs and secured with passwords for e
 
 # Connectivity Tests
 
-## Ping from an IT PC to a PC in the HR Department:
+## Ping from IT Department PC to PC in the HR Department:
 ![image](https://github.com/user-attachments/assets/662baa42-e709-4cb3-a68a-25b935a770dc)
 
-## Ping from a Finance smartphone to a PC in the HR Department:
+## Ping from Finance Department smartphone to PC in the HR Department:
 ![image](https://github.com/user-attachments/assets/33e08103-80be-4f54-9d37-863a97e77dab)
 
-## Ping from an HR laptop to a printer in the Finance Department:
+## Ping from HR Department laptop to printer in the Finance Department:
 ![image](https://github.com/user-attachments/assets/b13f53c0-06b5-41fe-9560-efcb76bf0076)
 
 ---
