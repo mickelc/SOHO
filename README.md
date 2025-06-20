@@ -125,6 +125,7 @@ Access Points were configured with custom SSIDs and secured with passwords for e
 
 5) Troubleshooting and verifying Layer 2 & 3 connectivity
 
+See packet tracer file in repository for the SOHO file
 
 
 
